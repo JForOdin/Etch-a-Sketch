@@ -3,5 +3,12 @@
     
     display: flex;
     max-width : 960px;
+    max-height : auto;
     margin: 0 auto;
+}
+.column-div {
+    height: 64px;
+    width: 64px;
+    background-color: #555;
+
 }

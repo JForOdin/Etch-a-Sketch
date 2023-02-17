@@ -1,6 +1,6 @@
 
-const tileWidth = 32;
-const tileHeight = 32;
+const tileWidth = 64;
+const tileHeight = 64;
 const screenWidth = 960;
 const screenHeight = 960;
 
@@ -24,23 +24,12 @@ for(let i = 0; i < tilesY; i++)
         const column = document.createElement('div');
         column.className="column-div";
        // column.textContent = ".";
+       // column.innerHTML = `<img src="." width="${tileWidth}" height="${tileHeight}"></img>`;
         column.style.width=tileWidth;
+        column.style.border="2px solid black";
         row.appendChild(column);
     }
-}
- /*for(let i = 0; i < totalTiles;i++)
-{
- 
    
-    for(let j = 0; j < tilesY; j++)
-    {
-        const div = document.createElement('div');
 
-        div.textContent = "H";
-        div.style.color = 'blue';
-        div.style.width=tileWidth;
-        div.style.height=tileHeight;                                     
-        boardDiv.appendChild(div);
-        
-    } 
-}  */
+}
+
