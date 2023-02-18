@@ -1,12 +1,12 @@
 
-const tileWidth = 64;
-const tileHeight = 64;
-const screenWidth = 960;
-const screenHeight = 960;
+const tileWidth = 24;
+const tileHeight = 24;
+const screenWidth = 576;
+const screenHeight = 768;
+const pixels = [];
 
-
-tilesX = screenWidth/tileWidth;
-tilesY = screenHeight/tileHeight;
+tilesX = screenWidth/tileWidth;  //
+tilesY = screenHeight/tileHeight; //24
 const totalTiles = tilesX*tilesY;
 console.log("TilesX "+tilesX);
 console.log("TilesX "+tilesY);
@@ -23,13 +23,29 @@ for(let i = 0; i < tilesY; i++)
     {
         const column = document.createElement('div');
         column.className="column-div";
-       // column.textContent = ".";
        // column.innerHTML = `<img src="." width="${tileWidth}" height="${tileHeight}"></img>`;
         column.style.width=tileWidth;
-        column.style.border="2px solid black";
+        column.style.border="1px solid dimgrey";
         row.appendChild(column);
+        pixels.push(column);
     }
-   
+}
+const paintPixel = (element) => {
+    element.style.backgroundColor = "dimgrey";
+    if(element.clicked==true)
+       {
+           console.log("already painted");
+           element.style.backgroundColor = "black";
+
+       }
+    element.clicked = true;
 
 }
+pixels.forEach(element => {
+    element.addEventListener('mouseover', () => {
+       // element.style.backgroundColor = "dimgrey";
+       paintPixel(element);
+       
+    });
+});
 
