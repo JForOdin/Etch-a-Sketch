@@ -2,16 +2,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: fit-content;
     margin: 0 auto;
-
 }
 .header-div {
     display: flex;
     background-color: firebrick;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
 }
 .header-div h3 {
     flex: 1;
     text-align: center;
     color:goldenrod;
+    border:goldenrod solid 1px;
 }
 #board-div {
     background-color:firebrick;
@@ -20,6 +23,7 @@ body {
     width: fit-content;
     margin: 0 auto; 
     justify-content: center;
+
 
 }
 .column-div {
@@ -38,7 +42,8 @@ body {
     padding: 10px;
     color:goldenrod;
     background-color: firebrick;
-
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 
 }
 .board-options-container > * {
@@ -66,5 +71,11 @@ button:hover {
     background-color: goldenrod;
 }
 
+#footer {
+    text-align: center;
+    padding:10px;
+    color: goldenrod;
+
+}
 
 
