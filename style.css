@@ -1,3 +1,18 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+.header-div {
+    display: flex;
+    background-color: firebrick;
+}
+.header-div h3 {
+    flex: 1;
+    text-align: center;
+    color:goldenrod;
+}
 #board-div {
     background-color:firebrick;
     display: flex;
@@ -10,17 +25,9 @@
 .column-div {
     height: 16px;
     width: 16px;
-    background-color:rgb(189, 184, 177);
+    background-color:lightgrey;
 }
-.header-div {
-    display: flex;
-  
-}
-.header-div h3 {
-    flex: 1;
-    text-align: center;
-    color:goldenrod;
-}
+
 .column-div:hover {
     background-color: dimgrey;
 }
@@ -30,36 +37,34 @@
     justify-content: space-around;
     padding: 10px;
     color:goldenrod;
-    
+    background-color: firebrick;
+
 
 }
 .board-options-container > * {
     border:goldenrod solid 2px;
     padding: 2px;
-
 }
 
 .board-clear:hover {
     border:gray solid 2px;
     color:gray;
 }
-.board-resolution:hover {
-    border:gray solid 2px;
-    color:gray;
-}
+
 select {
     appearance: none;
     outline: 0;
     border: 1px solid goldenrod;
     color: goldenrod;
 }
-.board-resolution button {
+ button {
     color:goldenrod;
     background-color: white;
 }
-.board-resolution button:hover {
+button:hover {
     color:white;
     background-color: goldenrod;
 }
+
 
 

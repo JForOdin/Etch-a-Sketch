@@ -1,4 +1,12 @@
 
+const changeLargeBoard = () => {
+    console.log("Changing to large resolution");
+}
+const changeMediumBoard = () => {
+    console.log("Changing to medium resolution");
+}
+
+var paintOn = false;
 const tileWidth = 16;
 const tileHeight = 16;
 const screenWidth = 576;
@@ -12,43 +20,62 @@ const rowDiv = document.createElement('div');
 rowDiv.className="row-div";
 boardDiv.appendChild(rowDiv);
 
-function changeLargeBoard() {
-    console.log("Changing to large resolution");
-}
-function changeMediumBoard() {
-    console.log("Changing to medium resolution");
-}
-function changeSmallBoard() {
-    console.log("Changing to small resolution");
-}
-
-
-for(let i = 0; i < tilesY; i++)
-{
-    const row = document.createElement('div');
-    boardDiv.appendChild(row);
-    for(let j = 0; j < tilesX; j++)
+const eraseBoard = () => {
+    for(let pixel of pixels)
     {
-        const column = document.createElement('div');
-        column.className="column-div";
-       // column.innerHTML = `<img src="." width="${tileWidth}" height="${tileHeight}"></img>`;
-        column.style.width=tileWidth;
-        column.style.border="1px solid dimgrey";
-        row.appendChild(column);
-        pixels.push(column);
+        pixel.style.backgroundColor = "lightgrey"
+        pixel.style.border="1px solid dimgrey";
+    }
+}
+const changeSmallBoard = () => {
+    console.log("Changing to small resolution");
+    eraseBoard();
+    for(let pixel of pixels)
+    {
+        pixel.style.height = "8px";
+        pixel.style.width = "8px";
+
+    }
+}
+const paint = () => {
+    if(paintOn)
+        paintOn=false;
+    else
+        paintOn=true;
+}
+///create board below
+const createBoard = () => 
+{
+    for(let i = 0; i < tilesY; i++)
+    {
+        const row = document.createElement('div');
+        boardDiv.appendChild(row);
+        for(let j = 0; j < tilesX; j++)
+        {
+            const column = document.createElement('div');
+            column.className="column-div";
+           // column.innerHTML = `<img src="." width="${tileWidth}" height="${tileHeight}"></img>`;
+            column.style.width=tileWidth;
+            column.style.border="1px solid dimgrey";
+            row.appendChild(column);
+            pixels.push(column);
+        }
     }
 }
 const paintPixel = (element) => {
-    element.style.backgroundColor = "dimgrey";
- /*   if(element.clicked==true)
+    if(paintOn)
+        element.style.backgroundColor = "dimgrey";
+  /*  if(element.clicked==true)
        {
            console.log("already painted");
            element.style.backgroundColor = "black";
 
        }
-    element.clicked = true;*/
+    element.clicked = true; */
 
 }
+createBoard();
+
 pixels.forEach(element => {
     element.addEventListener('mouseover', () => {
        // element.style.backgroundColor = "dimgrey";
@@ -56,4 +83,3 @@ pixels.forEach(element => {
        
     });
 });
-
