@@ -3,15 +3,13 @@
     display: flex;
     padding: 15px;
     width: fit-content;
-    /* max-width : 768px; */
-    /* max-height : 512px; */
-     margin: 0 auto; 
+    margin: 0 auto; 
     justify-content: center;
 
 }
 .column-div {
-    height: 24px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
     background-color:rgb(189, 184, 177);
 }
 .header-div {
@@ -21,12 +19,47 @@
 .header-div h3 {
     flex: 1;
     text-align: center;
-    color :dimgray;
+    color:goldenrod;
 }
 .column-div:hover {
     background-color: dimgrey;
 }
-.column-div:hover:after {
-    background-color: dimgrey;
-    color: blue;
+
+.board-options-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    color:goldenrod;
+    
+
 }
+.board-options-container > * {
+    border:goldenrod solid 2px;
+    padding: 2px;
+
+}
+
+.board-clear:hover {
+    border:gray solid 2px;
+    color:gray;
+}
+.board-resolution:hover {
+    border:gray solid 2px;
+    color:gray;
+}
+select {
+    appearance: none;
+    outline: 0;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+}
+.board-resolution button {
+    color:goldenrod;
+    background-color: white;
+}
+.board-resolution button:hover {
+    color:white;
+    background-color: goldenrod;
+}
+
+

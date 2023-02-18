@@ -1,20 +1,28 @@
 
-const tileWidth = 24;
-const tileHeight = 24;
+const tileWidth = 16;
+const tileHeight = 16;
 const screenWidth = 576;
 const screenHeight = 768;
 const pixels = [];
-
-tilesX = screenWidth/tileWidth;  //
-tilesY = screenHeight/tileHeight; //24
+const tilesX = screenWidth/tileWidth;  //
+const tilesY = screenHeight/tileHeight; //24
 const totalTiles = tilesX*tilesY;
-console.log("TilesX "+tilesX);
-console.log("TilesX "+tilesY);
 const boardDiv = document.querySelector('#board-div');
-
 const rowDiv = document.createElement('div');
 rowDiv.className="row-div";
 boardDiv.appendChild(rowDiv);
+
+function changeLargeBoard() {
+    console.log("Changing to large resolution");
+}
+function changeMediumBoard() {
+    console.log("Changing to medium resolution");
+}
+function changeSmallBoard() {
+    console.log("Changing to small resolution");
+}
+
+
 for(let i = 0; i < tilesY; i++)
 {
     const row = document.createElement('div');
@@ -32,13 +40,13 @@ for(let i = 0; i < tilesY; i++)
 }
 const paintPixel = (element) => {
     element.style.backgroundColor = "dimgrey";
-    if(element.clicked==true)
+ /*   if(element.clicked==true)
        {
            console.log("already painted");
            element.style.backgroundColor = "black";
 
        }
-    element.clicked = true;
+    element.clicked = true;*/
 
 }
 pixels.forEach(element => {
