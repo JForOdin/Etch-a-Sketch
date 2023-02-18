@@ -1,19 +1,18 @@
 
 
-var paintOn = true;
-var tileWidth = 16;
+var paintOn = true; //user can toggle whether to draw or not by clicking mouse
+var tileWidth = 16;  //initial resolution for pixels
 var tileHeight = 16;
-const smallBoardPixelSize = "8";
+const smallBoardPixelSize = "8";  
 const mediumBoardPixelSize = "12";
 const largeBoardPixelSize = "16";
-const screenWidth = 576; //36
-const screenHeight = 768; //48
-var pixels = [];
-var tilesX = screenWidth/tileWidth;  //
-var tilesY = screenHeight/tileHeight; //24
-const totalTiles = tilesX*tilesY;
-const boardDiv = document.querySelector('#board-div');
-const rowDiv = document.createElement('div');
+const screenWidth = 576; //determines how many tiles in the Y direction
+const screenHeight = 768; //helps to determing how many tiles are in the X
+var pixels = []; //an array of  pixels
+var tilesX = screenWidth/tileWidth;  
+var tilesY = screenHeight/tileHeight; 
+const boardDiv = document.querySelector('#board-div'); //board div from index.html
+const rowDiv = document.createElement('div'); //create a div for
 rowDiv.className="row-div";
 boardDiv.appendChild(rowDiv);
 
@@ -21,7 +20,6 @@ const eraseBoard = () => {
     for(let pixel of pixels)
     {
         pixel.style.backgroundColor = "lightgrey"
-        pixel.style.border="1px solid dimgrey";
     }
 }
 const changeSmallBoard = () => {
@@ -30,7 +28,6 @@ const changeSmallBoard = () => {
     {
         pixel.style.height = "8px";
         pixel.style.width = "8px";
-
     } 
 }
 const changeMediumBoard = () => {
@@ -45,14 +42,6 @@ const changeMediumBoard = () => {
 }
 const changeLargeBoard = () => {
     console.log("Changing to Large resolution");
-  /*  eraseBoard();
-    for(let pixel of pixels)
-    {
-        pixel.style.height = "16px";
-        pixel.style.width = "16px";
-        
-    }*/
-    
     createBoard(16,16);
 }
 
@@ -88,13 +77,9 @@ const createBoard = (tileWidth,tileHeight) =>
         {
             const column = document.createElement('div');
             column.className="column-div";
-           // column.innerHTML = `<img src="." width="${tileWidth}" height="${tileHeight}"></img>`;
             column.style.width=tileWidth;
             column.style.height=tileHeight;
-            //column.style.height=tileHeight;
-
-         //   column.style.border="1px solid dimgrey";
-            column.style.outline = "1px solid dimgrey";
+            column.style.outline = "0.5px solid dimgrey";
             row.appendChild(column);
             pixels.push(column);
         }

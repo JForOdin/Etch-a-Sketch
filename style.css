@@ -1,7 +1,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: fit-content;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    background-color:white;
 }
 .header-div {
     display: flex;
@@ -20,10 +23,9 @@ body {
     background-color:firebrick;
     display: flex;
     padding: 15px;
-    width: fit-content;
     margin: 0 auto; 
     justify-content: center;
-
+    
 
 }
 .column-div {
@@ -34,6 +36,8 @@ body {
 
 .column-div:hover {
     background-color: dimgrey;
+    transition: background-color 1s linear;
+
 }
 
 .board-options-container {
@@ -63,6 +67,7 @@ select {
     color: goldenrod;
 }
  button {
+    
     color:goldenrod;
     background-color: white;
 }
